@@ -1,0 +1,285 @@
+<HTML><HEAD><TITLE>The Electric Newspaper</TITLE><META HTTP-EQUIV="Expires" CONTENT="Tue, 20 Aug  1996 14:25:27 GMT"><script language=javascript><!-- hide javascript from old browsers// this set of scripts implements automatic buttons for Netscape3+// and MSIE 4+.  buttons must follow the following guidelines//// naming:   all buttons need an 'on' and 'off' state, reflecting//           whether the mouse is on or off the button.//           the on and off states must be the same filetype (ie gif or jpg)//           different buttons may be different fle types however.//// use:      name your images and call onLoad="prewax();return true;" from//           within the body tag. see the example button below.//// credits:  this code was written by dave sag (dave@va.com.au) July 1997//           it is based on Mark King's (mark.king@va.com.au) original//           waxon/off script set.//           if you use this code please email us and let us know.//// disclaimer: Neither Dave Sag, Mark King, Virtual Artists or Ampersand Internet//             make any warranty as to the usefullness or accuracy of this code and//             accept no liability for its use, or from incidents arising from its use.//// contacts:   Virtual Artists Pty Ltd   http://www.va.com.au    va@va.com.au//             Dave Sag                  http://dave.va.com.au   dave@va.com.au//             Mark King                 http://mark.va.com.au   mark.king@va.com.au//// history:    last modified 12 Aug 1997 by dave Sag//             now works for any images as long as they end in _off.{jpg|gif} and _on.{jpg|gif}//             no ned for the image name to match the src location.//             works propely with non local images and images outside of a graphics folderfunction butt_type (butt_name){                  if( document[butt_name].src.indexOf(".jpg",1)>1) return ".jpg";                  else return ".gif";                  }function waxon (butt_name) {        if(document.images) {                var tempt = document[butt_name].src.indexOf("_off",1)                document[butt_name].src=document[butt_name].src.substring(0,tempt)+"_on"+butt_type(butt_name);        }}function waxoff (butt_name) {        if(document.images) {                var tempt = document[butt_name].src.indexOf("_on",1)                document[butt_name].src=document[butt_name].src.substring(0,tempt)+"_off"+butt_type(butt_name);        }}function statuson (text) {        window.status=text;        if(parseInt(navigator.appVersion.substring(0,1))<3) {        setTimeout("statusoff()",2000);        }}function statusoff () {        window.status="";}function prewax () {  if(document.images) {      butts = new Array ();      for (var i=0;i<document.images.length;i++){        var tempt = document.images[i].src.indexOf("_off",1)        if (tempt>0) {      butts[i] = new Image();      var butt_name = document.images[i].name;      butts[i].src = document.images[i].src.substring(0,tempt)+"_on"+butt_type(butt_name);      }    }  }}//Javascript Ends --></script></HEAD><BODY  bgcolor="#ffffff" onLoad="prewax();return true;"><CENTER><IMG SRC="images/tenlogo.gif" ALT="The Electric Newspaper" WIDTH="491" HEIGHT="216"><br><B><font size=+2><SCRIPT LANGUAGE="Javascript"><!--// Array of day namesvar dayNames = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");// Array of month Namesvar monthNames = new Array("January","February","March","April","May","June","July","August","September","October","November","December");var now = new Date();document.write(dayNames[now.getDay()] + ", " + monthNames[now.getMonth()] + " " + now.getDate() + ", 19" + now.getYear());// --></SCRIPT></font><br><font size=+1 color="#908D00"> </font></B></CENTER><TABLE BORDER="0" CELLPADDING="5" CELLSPACING="0" WIDTH="600"><TR VALIGN=TOP><TD WIDTH="150"><center><A HREF="news/index.html"        onMouseOver="waxon('news');        statuson('news'); return true;"        onMouseOut="statusoff(); waxoff('news');        return true;"><IMG name=news SRC="buttons/butt_news_off.gif" ALT="news" WIDTH="140" HEIGHT="32" BORDER="0"></a><br><A HREF="digest/index.html"        onMouseOver="waxon('digest');        statuson('digest'); return true;"        onMouseOut="statusoff(); waxoff('digest');        return true;"><IMG name=digest SRC="buttons/butt_digest_off.gif" ALT="digest" WIDTH="140" HEIGHT="32" BORDER="0"></a><br><A HREF="essays/index.html"        onMouseOver="waxon('essays');        statuson('essays'); return true;"        onMouseOut="statusoff(); waxoff('essays');        return true;"><IMG name=essays SRC="buttons/butt_essays_off.gif" ALT="essays" WIDTH="140" HEIGHT="32" BORDER="0"></a><br><A HREF="arts/index.html"        onMouseOver="waxon('arts');        statuson('arts'); return true;"        onMouseOut="statusoff(); waxoff('arts');        return true;"><IMG name=arts SRC="buttons/butt_arts_off.gif" ALT="arts" WIDTH="140" HEIGHT="32" BORDER="0"></a><br><A HREF="food/index.html"        onMouseOver="waxon('food');        statuson('food and drink'); return true;"        onMouseOut="statusoff(); waxoff('food');        return true;"><IMG name=food SRC="buttons/butt_food_off.gif" ALT="food and drink" WIDTH="140" HEIGHT="32" BORDER="0"></a><br><A HREF="holidays/index.html"        onMouseOver="waxon('holidays');        statuson('holidays'); return true;"        onMouseOut="statusoff(); waxoff('holidays');        return true;"><IMG name=holidays SRC="buttons/butt_holidays_off.gif" ALT="holidays" WIDTH="140" HEIGHT="32" BORDER="0"></a><br><A HREF="films/index.html"        onMouseOver="waxon('films');        statuson('films screening'); return true;"        onMouseOut="statusoff(); waxoff('films');        return true;"><IMG name=films SRC="buttons/butt_films_off.gif" ALT="films screening" WIDTH="140" HEIGHT="32" BORDER="0"></a><br><A HREF="books/index.html"        onMouseOver="waxon('books');        statuson('new books'); return true;"        onMouseOut="statusoff(); waxoff('books');        return true;"><IMG name=books SRC="buttons/butt_books_off.gif" ALT="new books" WIDTH="140" HEIGHT="32" BORDER="0"></a><br><A HREF="sport/index.html"        onMouseOver="waxon('sport');        statuson('sport'); return true;"        onMouseOut="statusoff(); waxoff('sport');        return true;"><IMG name=sport SRC="buttons/butt_sport_off.gif" ALT="sport" WIDTH="140" HEIGHT="32" BORDER="0"></a><br><A HREF="classifieds/index.html"        onMouseOver="waxon('classifieds');        statuson('classifieds'); return true;"        onMouseOut="statusoff(); waxoff('classifieds');        return true;"><IMG name=classifieds SRC="buttons/butt_classifieds_off.gif" ALT="classifieds" WIDTH="140" HEIGHT="32" BORDER="0"></a><br><A HREF="team/index.html"        onMouseOver="waxon('team');        statuson('team'); return true;"        onMouseOut="statusoff(); waxoff('team');        return true;"><IMG name=team SRC="buttons/butt_team_off.gif" ALT="the team" WIDTH="140" HEIGHT="32" BORDER="0"></a><br><A HREF="letters/index.html"        onMouseOver="waxon('letters');        statuson('letters'); return true;"        onMouseOut="statusoff(); waxoff('letters');        return true;"><IMG name=letters SRC="buttons/butt_letters_off.gif" ALT="letter to the editor" WIDTH="140" HEIGHT="32" BORDER="0"></a><br><A HREF="alms/index.html"        onMouseOver="waxon('alms');        statuson('alms'); return true;"        onMouseOut="statusoff(); waxoff('alms');        return true;"><IMG name=alms SRC="buttons/butt_alms_off.gif" ALT="alms" WIDTH="140" HEIGHT="32" BORDER="0"></a><br><img losrc="http://www.electric.on.net/graphics/w.gif" src="http://www.electric.on.net/ads/zuma_2.gif" width=100 height=300 alt="Zumas"><p><img losrc="http://www.electric.on.net/graphics/w.gif" src="http://www.electric.on.net/ads/addition_1.gif" width=100 height=300 alt="Addition Specialist"><br></TD><td width="450"><p><hr noshade><table border=0 cellpadding=3 cellspacing=0 width=100% bgcolor="#dddddd"><tr><td><B><CENTER><FONT SIZE="+2">NEWS</FONT></CENTER></B></td></tr></table><hr noshade><p><TABLE BORDER="0" CELLPADDING="5" CELLSPACING="0" WIDTH="100%"><TR>	<TD bgcolor="#99FFFF"><IMG SRC="http://www.electric.on.net/news/07July/28May-09.JPG" ALIGN=RIGHT WIDTH="250" HEIGHT="162" BORDER="0" HSPACE="3" VSPACE="3"><B><font size=+2><a href="news/31July-04.html">No time to say hello, see ya!</a></font></B><br><FONT SIZE="-1">(July 31)</FONT><p>The Electric Newspaper is seven months old this week. It's now been sevenmonths of hard work. In that time, we've averaged almost 50,000 hits aweek. That's some 200,000 readers a month. Not bad.<P ALIGN=RIGHT><font size=-1><a href="news/31July-04.html">would you like to know more?</a></font><br clear=all>	</TD></TR></TABLE><p><hr noshade><p><B><font size=+2><a href="news/31July-01.html">Olsen sticks by Ingo like doggydoo sticks to shoes</a></font></B><br><FONT SIZE="-1">(July 31)</FONT><p>South Australian Premier John Olsen yesterday once again gave his supportto disgraced Minister Graham Ingerson, who was found last week to havedeliberately misled Parliament and who nevertheless escaped - in a closevote - censure by the House.<P ALIGN=RIGHT><font size=-1><a href="news/31July-01.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="news/31July-02.html">Off the buses</a></font></B><br><FONT SIZE="-1">(July 31)</FONT><p>People living in Adelaide's northern suburbs are having to drive their owncars, hitch a lift, or stay home from school and work today because of astrike by union bus drivers.<P ALIGN=RIGHT><font size=-1><a href="news/31July-02.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="news/31July-05.html">Tree plan leaves carbon for dead</a></font></B><br><FONT SIZE="-1">(July 31)</FONT><p>Could farm forestry be Australia’s biggest primary industry in the nextcentury? If so,  tree farms may make money for Australian farmers whilehelping solve one of the world's environmental problems.<P ALIGN=RIGHT><font size=-1><a href="news/31July-05.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="news/31July-03.html">Aboriginals scapegoats, says ATSIC</a></font></B><br><FONT SIZE="-1">(July 31)</FONT><p>Federal Government misinformation about Aboriginals is feeding the OneNation agenda, ATSIC chairman Gatjil Djerrkura told a United Nations forumin Geneva this week.<P ALIGN=RIGHT><font size=-1><a href="news/31July-03.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="news/30July-05.html">Ingerson may have to Nick off</a></font></B><br><FONT SIZE="-1">(July 30)</FONT><p>No Pokies MLC Nick Xenophon this morning threatened to vote against theETSA Bill, unless Minister Graham Ingerson was dumped for misleadingParliament.<P ALIGN=RIGHT><font size=-1><a href="news/30July-05.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="news/30July-04.html">State IR laws under ire</a></font></B><br><FONT SIZE="-1">(July 30)</FONT><p>The United Trades and Labor Council claims South Australian workers willdrop pay and lose working conditions if the State Government's proposedindustrial legislation is passed.<P ALIGN=RIGHT><font size=-1><a href="news/30July-04.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="news/30July-06.html">More than a mouthfull</a></font></B><br><FONT SIZE="-1">(July 30)</FONT><p>The South Australian Balfours company hopes to explore new markets with thehelp of new $3 million state-of-the-art machinery.<P ALIGN=RIGHT><font size=-1><a href="news/30July-06.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="news/30July-03.html">So you reckon it's crook here?</a></font></B><br><FONT SIZE="-1">(July 30)</FONT><p>The Victorian Government has appointed the chairman of North Ltd to theBoard of Parks Victoria, and a BHP executive to the EnvironmentConservation Council.<P ALIGN=RIGHT><font size=-1><a href="news/30July-03.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="news/30July-02.html">New cash for old problem</a></font></B><br><FONT SIZE="-1">(July 30)</FONT><p>South Australia's aging population may be the beginning for a new industry- looking after the oldies.<P ALIGN=RIGHT><font size=-1><a href="news/30July-02.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="news/30July-01.html">New Hills road for development</a></font></B><br><FONT SIZE="-1">(July 30)</FONT><p>Adelaide environmental lawyer Marcus Beresford claims developer AndrewGarrett has purchased the old Adelaide reservoir land and is in the processof obtaining land from the Waite Agricultural Research Institute.<P ALIGN=RIGHT><font size=-1><a href="news/30July-01.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><A HREF="http://dove.mtx.net.au/~andypc/odd/oddhome.htm"><IMG SRC="http://www.electric.on.net/ads/andypc_ad.gif" WIDTH="450" HEIGHT="80" BORDER="0" HSPACE="0" VSPACE="0"></A><p><hr noshade><p><B><font size=+2><a href="news/29July-02.html">Olsen plays tough hand as stakes rise</a></font></B><br><FONT SIZE="-1">(July 29)</FONT><p>The faction supporting Premier John Olsen in the South Australian LiberalGovernment have challenged its rivals make a run for top job at nextTuesday's meeting of all Government MP's.<P ALIGN=RIGHT><font size=-1><a href="news/29July-02.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="175" align=right><tr><td><center><IMG SRC="news/29July/HG2907A.jpg" WIDTH="170" HEIGHT="116" BORDER="0" HSPACE="3" VSPACE="3"><p><font size=-1><b>entrance to the Coorong</b></font></center></td></tr></TABLE><B><font size=+2><a href="news/29July-03.html">Coorongs don't make a right</a></font></B><br><FONT SIZE="-1">(July 29)</FONT><p>The Coorong - a huge inland sea once fed by Australia's longest river andwith access to the Southern Ocean - is getting a dose of fresh water.<P ALIGN=RIGHT><font size=-1><a href="news/29July-03.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="news/29July-04.html">Call to scrap national park entry fees</a> </font></B><br><FONT SIZE="-1">(July 29)</FONT><p>A Senate committee has found that the trend towards charging entry fees tomuseums, art galleries and national parks is probably wrong.<P ALIGN=RIGHT><font size=-1><a href="news/29July-04.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><IMG SRC="news/29July/gene_food.gif" ALIGN=RIGHT WIDTH="250" HEIGHT="158" BORDER="0" HSPACE="3" VSPACE="3"><B><font size=+2><a href="news/29July-01.html">You are what you bleat</a></font></B><br><FONT SIZE="-1">(July 29)</FONT><p>Over 250 people in Adelaide last night showed their concern over somethingmost people haven't even heard about yet - the possible risks ofgenetically modified food. If what you eat becomes you, then manyAustralians may soon choose to look at the fine print on the labels.<P ALIGN=RIGHT><font size=-1><a href="news/29July-01.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="news/29July-05.html">Locals oppose Hills development</a></font></B><br><FONT SIZE="-1">by Krista Eleftheriou (July 29)</FONT><p>People living in the Adelaide foothills have entered the second round intheir fight to stop a huge motel, restaurant, and winery complex beingbuilt on the sensitive Hills Face.<P ALIGN=RIGHT><font size=-1><a href="news/29July-05.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="news/29July-06.html">A vote for success</a>
+</font></B>
+<br>
+<FONT SIZE="-1">(July 29)</FONT>
+<p>
+The State Electoral Office’s claimed reputation as a leader in information
+technology has been strengthened with the promotion of its IT manager to
+the position of deputy Electoral Commissioner.
+<P ALIGN=RIGHT>
+<font size=-1><a href="news/29July-06.html">would you like to know more?</a></font>
+<br clear=all>
+<p>
+<hr noshade>
+<p>
+<B><font size=+2>
+<a href="news/28July-03.html">S'no weather to be out in the weather</a>
+</font></B>
+<br>
+<FONT SIZE="-1">(July 28)</FONT>
+<p>
+<center>
+<IMG SRC="pix/hg1707-d.GIF" WIDTH="368" HEIGHT="220" BORDER="0" HSPACE="3" VSPACE="3">
+</center>
+<p>
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="205" align=right>
+<tr><td>
+<center>
+<IMG SRC="http://www.electric.on.net/graphics/w.gif" WIDTH="200" HEIGHT="70" BORDER="1" HSPACE="3" VSPACE="3">
+<p>
+<font size=-1>
+<b>
+Fog in the Adelaide Hills yesterday (photographer unknown).
+</b>
+</font>
+</center>
+</td></tr>
+</TABLE>
+It's snowing in parts of the Adelaide Hills - in some places, where locals
+say they've never seen snow before.
+<P ALIGN=RIGHT>
+<font size=-1><a href="news/28July-03.html">would you like to know more?</a></font>
+<br clear=all>
+<p>
+<hr noshade>
+<p>
+<B><font size=+2>
+<a href="news/28July-02.html">Ringing up the bill</a>
+</font></B>
+<br>
+<FONT SIZE="-1">(July 28)</FONT>
+<p>
+South Australians are to pay up to $200 million for a new emergency
+services radio network, in a deal which may be difficult to unscramble.
+<P ALIGN=RIGHT>
+<font size=-1><a href="news/28July-02.html">would you like to know more?</a></font>
+<br clear=all>
+<p>
+<hr noshade>
+<p>
+<CENTER><B><font size=+2>
+<a href="news">would you like to read more news stories?</a>
+</font></B></CENTER>
+<p>
+
+
+<!-- Çhr noshadeÈ
+ÇpÈ
+Çfont size=+2ÈÇa href="digest"ÈÇBÈIn Today's Media RoundupÇ/BÈÇ/aÈÇ/fontÈ
+ÇpÈ
+ÇulÈ
+ÇliÈ
+ÇBÈ
+GST PUSH : MORE CASH TO FAMILIES
+Ç/BÈ
+ÇliÈ
+ÇBÈ
+POLLSTER SEES GST AS COALITION 'SUICIDE'
+Ç/BÈ
+ÇliÈ
+ÇBÈ
+MLC THREATENS OLSEN'S ETSA STRATEGY
+Ç/BÈ
+ÇliÈ
+ÇBÈ
+$114BN IN EXPORTS AS TRADERS FIND WAY AROUND ASIAN CRISIS
+Ç/BÈ
+ÇliÈ
+ÇBÈ
+CLINTON TO TESTIFY
+Ç/BÈ
+ÇliÈ
+ÇBÈ
+TOUR de FRANCE CHAOS                   
+Ç/BÈ
+ÇliÈ
+ÇBÈ
+FINANCE : DOW LOWEST IN A MONTH
+Ç/BÈ
+ÇliÈ
+ÇBÈ
+WEATHER :  BECOMING FINE
+Ç/BÈ
+Ç/ulÈ
+Çbr clear=allÈ
+ÇpÈ -->
+
+
+<CENTER>
+<A HREF="mailto:lhearn@msnsa.com.au"><img src="http://www.electric.on.net/ads/ads_news/media_sales.gif" width=380 height=60 border=1></A>
+</CENTER>
+<p>
+<hr noshade>
+<table border=0 cellpadding=3 cellspacing=0 width=100% bgcolor="#dddddd">
+<tr>
+<td>
+<B><CENTER><FONT SIZE="+2">VIEWPOINTS</FONT></CENTER></B>
+</td>
+</tr>
+</table>
+<hr noshade>
+<p>
+<img src="essays/dinkus/sandra_kanck.jpg" width=70 height=90 align=right vspace=3 hspace=3>
+<B><font size=+2>
+<A HREF="essays/31July-01.html">A pox on both their houses</a>
+</font></B>
+<br>
+<font size=-1>
+by Sandra Kanck, Australian Democrat MLC
+</font>
+<p>
+Australians' former easy going political apathy long ago transformed into a
+general scepticism towards politicians. The combined impact of the Keating
+Labor and Howard Liberal Governments has been to transform this scepticism
+into a hard edged cynicism. 
+<p align=right>
+<font size=-1><A HREF="essays/31July-01.html">would you like to know more?</a></font>
+<BR clear=all>
+<p>
+<hr noshade>
+<p>
+<img src="essays/dinkus/zollo.gif" width=63 height=90 align=right vspace=3 hspace=3>
+<B><font size=+2>
+<A HREF="essays/31July-02.html">Beware the false prophets</a>
+</font></B>
+<br>
+<font size=-1>
+by Carmel Zollo, Labor member in the Legislative Council
+</font>
+<p>
+"In 1948 I shared with thousands the gift of false prophecy.  I was
+satisfied Tom Dewey would win the (U.S.) presidency; which goes to show
+what extraordinary results can happen in a country like the U.S. so
+backward as not to have compulsory voting." 
+(R. G. Menzies, reported in New York 1960)
+<p align=right>
+<font size=-1><A HREF="essays/31July-02.html">would you like to know more?</a></font>
+<BR clear=all>
+<p>
+<hr noshade>
+<p>
+<B><font size=+2>
+<A HREF="essays/31July-04.html">Up jumped the squatter</A>
+</font></B>
+<br>
+<font size=-1>
+by Ralph Clarke
+</font>
+<p>
+This week I was in Mount Gambier for a few days, campaigning for the Labor
+Party's Federal candidate for the seat of Barker, David Detchon, and I was
+surprised by the depth of ill feeling that exists amongst the residents of
+Mount Gambier, and the South East, generally towards their absentee Federal
+MP Ian McLachlan.
+<p align=right>
+<font size=-1><A HREF="essays/31July-04.html">would you like to know more?</a></font>
+<BR clear=all>
+<p>
+<hr noshade>
+<p>
+<img src="essays/31July/hg2907b.jpg" width=170 height=97 align=right vspace=3 hspace=3>
+<B><font size=+2>
+<A HREF="essays/31July-03.html">A matter of preference</a>
+</font></B>
+<br>
+<font size=-1>
+by Bernice Pfitzner *
+</font>
+<p>
+At the last State election in 1997, preferential votes made the difference
+by not returning the first and only Australian of Asian origin back into
+South Australia's Upper House.
+<p align=right>
+<font size=-1><A HREF="essays/31July-03.html">would you like to know more?</a></font>
+<BR clear=all>
+<p>
+<center>
+<img src="http://www.electric.on.net/ads/ads_news/agriffiths_optometrist.gif" width=380 height=60 border=0>
+</center>
+<p>
+<hr noshade>
+<table border=0 cellpadding=3 cellspacing=0 width=100% bgcolor="#dddddd">
+<tr>
+<td>
+<B><CENTER><FONT SIZE="+2">LETTERS TO THE EDITOR</FONT></CENTER></B>
+</td>
+</tr>
+</table>
+<hr noshade>
+<p ALIGN=RIGHT><font size=-1><a href="letters/index.html#send_a_letter">Do you want to send a letter?</a></font>
+<p>
+<font size=-1>Monday July 27, 1998</font>
+<p>
+<B><font size=+2>
+Cold hands, warm heart
+</font></b>
+<p>
+I read Chris Warrens' article 'Out in the Cold' 24/7/98 with great
+interest. Late in '96 and early in '97 I raised concerns publicly through
+the print and electronic media about the reduction of emergency
+accommodation beds by the Salvos and Vinnies in Whitmore Sq. My comments
+were challenged and misrepresented by colleauges in both the government and
+non-government.
+<p>
+The criticisms came from colleagues adverse to commenting on activities of
+the religious organisations involved. After trying to hush up the changes,
+the Salvos and Vinnies had to come clean and claimed that the homeless
+would not be disadvantaged through the reduction of beds - an unbelievable
+claim they maintain in Mr. Warrens' story. There is nothing sinister in
+this plan of closing down the only option for many homeless people, it's
+about backing winners. I made that point when beds where reduced, and
+maintain it now during the total closure of emergency accommodation.
+<p>
+There is nothing sexy about emergency accommodation; however it is all some
+folks can cope with during episodes of home!lessness. The transformation of
+arrangements for these people from 70 emergency beds in Whitmore Square
+down to 10 beds, for up to nine weeks (with conditions), at the other end
+of town, doesn't come across as a solution to the ever-increasing amount of
+homeless persons.
+<p>
+Where will they go after their nine weeks are up? Nowhere! You can't break
+the cycle these people are in, in just nine  weeks. Someone has to fight on
+behalf of these people, as their situation makes it difficult for them. I
+wonder what my ex-colleagues are saying now?
+<p>
+Phil Harrison,
+<br>
+Woodville West
+<p>
+<center>
+<img src="http://www.electric.on.net/ads/journos-prides.gif" width=380 height=60>
+</center>
+<p>
+<hr noshade>
+<table border=0 cellpadding=3 cellspacing=0 width=100% bgcolor="#dddddd">
+<tr>
+<td>
+<B><CENTER><FONT SIZE="+2">HOLIDAYS</FONT></CENTER></B>
+</td>
+</tr>
+</table>
+<hr noshade>
+<p>
+<B><font size=+2>
+<A HREF="holidays/28July-01.html">Sharing the pleasure</a>
+</font></b>
+<br>
+<font size=-1>(July 28)</font>
+<p>
+A new campaign to promote SA tourism begins today - and it aims to
+encourage South Australians to explore their own State.
+<p align=right>
+<font size=-1><A HREF="holidays/28July-01.html">would you like to know more?</a></font>
+<BR clear=all>
+<p>
+<hr noshade>
+<p>
+<B><font size=+2>
+<A HREF="holidays/21July-01.html">Four stars decend on Barossa</a>
+</font></b>
+<br>
+<font size=-1>
+(July 21)
+</font>
+<p>
+Visitors to South Australia's fabled Barossa Valley wine district will soonbe able to choose to stay in a $28 million 4-star tourism resort, whichbegan construction yesterday.<p align=right><font size=-1><A HREF="holidays/21July-01.html">would you like to know more?</a></font><BR clear=all><p><hr noshade><p><IMG SRC="holidays/02July/bilb.gif" ALIGN=RIGHT WIDTH="184" HEIGHT="181" BORDER="0" HSPACE="5" VSPACE="5"><B><font size=+2><A HREF="holidays/02July-01.html">The lost fauna of Adelaide</font><p><font size=+1>an exhibition at the South Australian Museum</a></font></B><br><font size=-1>by Alice Carey (July 2)</font><p>What a surprise it would be to discover the scratching noise in the roofwas a sleek little spotted quoll curiously exploring your house. Or to findthe family bilbyproudly emerging from the pantry with a mouthful of mouse. This wildlifewhich could have been part of our lives is now extinct in South Australia. <p align=right><font size=-1><A HREF="holidays/02July-01.html">would you like to know more?</a></font><BR clear=all><p><CENTER><FORM ACTION="http://www.cobweb.com.au/cgi-bin/ads/clickthru.pl" METHOD="POST"><input type=hidden name="recipient" value="chris@cobweb.com.au"><input type=hidden name="env_report" value="REMOTE_HOST,HTTP_USER_AGENT,REMOTE_ADDR"><input type=hidden name="sort" value="order:subject,env_report"><input type=hidden name="redirect" value="http://www.canon.com.au"><input type=hidden name="subject" value="somebody clicked on the canon ad..."><INPUT TYPE="image" src="http://www.electric.on.net/ads/canon_2.gif" width=390 height=80 alt="Canon" border=1></form></CENTER><p><hr noshade><table border=0 cellpadding=3 cellspacing=0 width=100% bgcolor="#dddddd"><tr><td><B><CENTER><FONT SIZE="+2">ARTS</FONT></CENTER></B></td></tr></table><hr noshade><p><B><font size=+2><A HREF="arts/30July-01.html">Arts job in points north</a></font></B><p>Sonja MacLean Desilva has been appointed to the position as the Far Northarts officer for the South Australian Country Arts Trust.<p align=right><font size=-1><A HREF="arts/30July-01.html">would you like to know more?</a></font><BR clear=all><p><HR NOSHADE><p><B><font size=+2><A HREF="arts/28July-01.html">What they knew about Vanunu, with more to cry</a></font></B><br>An SA play about one of history's most famous whistleblowers<p><B>The Facts</B><br>In August 1986 Mordechai Vanunu revealed an explosive package ofphotographs to the parishioners of St John's, a progressive church in theheart of Kings Cross. The photos, which he had been carrying in hisbackpack for over a year as he travelled from country to country, were of Israel's secret nuclear bomb makingfacilities at the Dimona Nuclear Power Plant located in the Negev Desert.<p align=right><font size=-1><A HREF="arts/28July-01.html">would you like to know more?</a></font><BR clear=all><p><HR NOSHADE><p><table border=0 cellpadding=3 align=right width=175><tr><td align=center><IMG SRC="arts/24July/hg2307k2.jpg" WIDTH="169" HEIGHT="214" BORDER="0" HSPACE="3" VSPACE="3"><p><FONT SIZE="-1"><B>"The cigarette girl"</B></FONT></td></tr></table><B><font size=+2><A HREF="arts/24July-01.html">Mornington Peninsula Regional Gallery</a></font></B><br>Agnes Goodsir 1864-1939<br>"A picture land over the sea"<br>21 June-2 August 1998<br><FONT SIZE="-1">reviewed by Dianne Gall</FONT><p>The work of Agnes Goodsir has remained secret from public view fordecades with very little ever written about her. This was untilrecently, when Bendigo Art Gallery Curator, Karen Quinlan took up theproject of finding out who Goodsir was after a relative made herselfknown in the Gallery.<p align=right><font size=-1><A HREF="arts/24July-01.html">would you like to know more?</a></font><BR clear=all><p><HR NOSHADE><p><table border=0 cellpadding=3 align=right width=175><tr><td align=center><IMG SRC="arts/24July/hg2307k1.jpg" WIDTH="169" HEIGHT="164" BORDER="0" HSPACE="3" VSPACE="3"><p><FONT SIZE="-1"><B>Debroah Paauwe, from exhibition titled "blue room" 1998</B></FONT></td></tr></table><B><font size=+2><A HREF="arts/22July-02.html">Adelaide Roundup</font></B><br>SALA Week exhibitions (July 19-July 26 1998)</a><br><FONT SIZE="-1">reviewed by Dianne Gall (July 22)</FONT><p>It's official! SALA week is here, so go out and visit your local galleryfor a visual feast. See Russell Morrison at Hill Smith Gallery, StaffShow at Adelaide Central Gallery, Kim guthrie & Deborah Paauwe (seeseparate review for Daryl Austin) all at Greenaway Art Gallery.<p align=right><font size=-1><A HREF="arts/22July-02.html">would you like to know more?</a></font><BR clear=all><p><HR NOSHADE><p><table border=0 cellpadding=3 align=right width=175><tr><td align=center><IMG SRC="arts/24July/hg2307j3.jpg" WIDTH="169" HEIGHT="211" BORDER="0" HSPACE="3" VSPACE="3"></td></tr></table><B><font size=+2><A HREF="arts/22July-01.html">South Australian Living Artists week: Daryl Austin Still-Point Studio Paintings</font></B><br>Greenaway Art Gallery, Kent Town.<br>15 July - 9 August 1998</a><br><FONT SIZE="-1">reviewed by Dianne Gall (July 22)</FONT><p>Enter the world of illusion, question what is reality, these are thethings that perforate the consciousness when looking at these superblycrafted and intelligent paintings that Daryl Austin presents in hislatest exhibition at Greenaway Art Gallery. Go see it, you will not bedisappointed.<p align=right><font size=-1><A HREF="arts/22July-01.html">would you like to know more?</a></font><BR clear=all><p><center><img src="http://www.electric.on.net/ads/instech.gif" width=390 height=80></center><p><HR NOSHADE> <table border=0 cellpadding=3 cellspacing=0 width=100% bgcolor="#dddddd"><tr><td><B><CENTER><FONT SIZE="+2">FILMS SCREENING</FONT></CENTER></B></td></tr></table><hr noshade><p><IMG SRC="http://www.electric.on.net/films/31July/hg2507.jpg" ALIGN=right WIDTH="142" HEIGHT="198" BORDER="0"><B><font size=+2><a href="films/31July-01.html">The Interview</a></font></B><br><font size=-1>reviewed by Krista Eleftheriou</font><p>The Interview is an Australian-made psychological drama. It exploresthe struggle for power, the question of good or evil, guilt orinnocence, and the human mind.<p align=right><font size=-1><a href="films/31July-01.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><IMG SRC="http://www.electric.on.net/team/graphics/david_bradley.jpg" ALT="David Bradley" ALIGN=right WIDTH="82" HEIGHT="90" BORDER="0"><B><font size=+2><a href="films/27July-01.html">The X-Files</a></font></B><br><font size=-1>(Hoyts and selected cinemas, Rated M)<br>reviewed by David Bradley (July 27)</font><p> Omigod!!! It finally all fits together!!! Well..... maybe not. In fact,The X Files movie dares go onebetter on even the series, in being handsdown the only mass-adulation popcultural phenomenon that squillions ofpeople revere despite it answering naryone question and obscuring the hazy original facts still further.<p align=right><font size=-1><a href="films/27July-01.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><IMG SRC="films/21July/f-l.jpg" ALIGN=RIGHT WIDTH="166" HEIGHT="101" BORDER="0" HSPACE="3" VSPACE="3"><B><font size=+2><a href="films/21July-01.html">Fear and Loathing</a></font></B><br><font size=-1>(Wallis cinemas, Rated R)<br>reviewed by David Bradley (July 21)</font><p>Based on the cult writings of "gonzo" journo Hunter S. Thompson, thismonumentally eccentric phantasmagoria is exactly the movie director TerryGilliam wanted to make -and that's going to be a serious problem to many audiences (at least thosewith some semblance of sanity). <p align=right><font size=-1><a href="films/21July-01.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><ul><li><B><font size=+1><a href="films/15July-02.html">Western</a></font></B><li><B><font size=+1><a href="films/15July-01.html">She's So Lovely</a></font></B><li><B><font size=+1><a href="films/06July-01.html">Crackers</a></font></B><li><B><font size=+1><a href="films/06July-02.html">Warriors of Virtue</a></font></B><li><B><font size=+1><a href="films/26June-01.html">Kundun</a></font></B><li><B><font size=+1><a href="films/26June-02.html">Sliding Doors</a></font></B><li><B><font size=+1><a href="films/19June-01.html">Deep Impact</a></font></B><li><B><font size=+1><a href="films/17June-01.html">Godzilla</a></font></B><li><B><font size=+1><a href="films/21May-01.html">Nil by Mouth</a></font></B><li><B><font size=+1><a href="films/21May-04.html">City of Angels</a></font></B><p></ul><CENTER><A HREF="http://www.on.net/"><img  src="http://www.on.net/ad/ipa_banner.gif" width=390 height=80 alt="Internode"></A></CENTER><br clear=all><p><HR NOSHADE> <table border=0 cellpadding=3 cellspacing=0 width=100% bgcolor="#dddddd"><tr><td><B><CENTER><FONT SIZE="+2">NEW BOOKS</FONT></CENTER></B></td></tr></table><hr noshade><p><b><font size=+2><A HREF="books/28July-01.html">Foggy Mountain Breakdown</font><br><font size=+1>by Sharyn McCrumb</a></font><br>pub Ballantine Books<br>rrp $12.95 copyright 1997</b><br><font size=-1>reviewed by Denise Wels (July 28)</font><p>In this anthology Sharyn McCrumb, who has won all five of the mostprestigious mystery awards, showcases examples of her wide ranging stylesof writing.<p align=right><font size=-1><A HREF="books/28July-01.html">would you like to know more?</a></font><BR clear=all><p><hr noshade><p><b><font size=+2><A HREF="books/28July-02.html">Cybersaur</font><br><font size=+1>by Claire Carmichael</a></font><br>a Mark Macleod book from Random House Australia <br>rrp $9.95</b><br><font size=-1>reviewed by Denise Wels (July 28)</font><p>'Cybersaur' is the second book in the Virtual Realities trilogy. This factis not mentioned anywhere at the front of the book which is a nuisance foranyone wishing to begin at Book One of a series. Perhaps I am unusuallyslow, but it was only after reading a couple of chapters that I twiggedthat it was a continuation of an earlier beginning. Nonetheless, it standsalone.<p align=right><font size=-1><A HREF="books/28July-02.html">would you like to know more?</a></font><BR clear=all><p><hr noshade><p><b><font size=+2><A HREF="books/28July-03.html">Puberty Blues</font><br><font size=+1>by Gabrielle Carey and Kathy Lette</a></font><br>pub McPhee Gribble<br>rrp $12.95 copyright 1979</b><br><font size=-1>reviewed by Denise Wels (July 28)</font><p>After reading "Puberty Blues,' first published almost 20 years ago,  I satstunned and depressed. Yes, there are parts of the book that are extremelyfunny, and if one can discount the fact that it is autobiographical,written by a pair of 18 year-olds, then one can disregard the darkerimplications. Initially.<p align=right><font size=-1><A HREF="books/28July-03.html">would you like to know more?</a></font><BR clear=all><p><CENTER><img losrc="http://www.electric.on.net/graphics/w.gif" src="http://www.electric.on.net/ads/god_of_small_things.gif" width=390 height=80 alt="God of Small Things"></CENTER><p><HR NOSHADE> <table border=0 cellpadding=3 cellspacing=0 width=100% bgcolor="#dddddd"><tr><td><B><CENTER><FONT SIZE="+2">FOOD AND WINE</FONT></CENTER></B></td></tr></table><hr noshade><p><img src="http://www.electric.on.net/team/graphics/adrienne_eccles.jpg" width=71 height=91 align=right><B><font size=+2><A HREF="food/28July-01.html">Ferment at the old station</a></font></B><br>         <font size=-1>by Adrienne Eccles</font><p>     The train doesn't stop at the Auburn Railway Station any more.  The      tracks are long gone, and rail transport is one of the town's fading      memories.  Today, the Auburn Railway Station is alive with the clink      of glasses and the scent of fine wines.<p align=right><font size=-1><A HREF="food/28July-01.html">would you like to know more?</a></font><br clear=all><p><center><img src="http://www.electric.on.net/ads/tiptree.gif" width=390 height=80></center><p><HR NOSHADE> <table border=0 cellpadding=3 cellspacing=0 width=100% bgcolor="#dddddd"><tr><td><B><CENTER><FONT SIZE="+2">SPORT</FONT></CENTER></B></td></tr></table><hr noshade><p><B><font size=+2><a href="sport/30July-01.html">AFL final eight: Carlton will decide</A></font></B><br><FONT SIZE="-1">by Brendan Harris</FONT><p>Carlton is finishing this season on a strong note. Having beaten theAdelaide Crows on their home turf and then flogging the Western Bulldogs,Carlton will hurt possible finals contenders in the remaining rounds of theseason.<P ALIGN=RIGHT><font size=-1><a href="sport/30July-01.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="sport/30July-02.html">Crows miss the score: what now for the eight?</a></font></B><br><FONT SIZE="-1">by Brendan Harris</FONT><p>Twelve seconds left on the clock. The Crows are down by a point. All 36players are inside the Crows' 50 metre line. Nigel Smart uncannily findsspace, he takes several steps and kicks. Will the ball travel far enough?Is the accuracy there? Its a high ball! Its got the distance. It will be agoal and a win! It will certainly collect a point and draw! Some confusion.The boundary umpire extends his arms and agony grips the hearts ofthousands, thousands of miles away in Adelaide. The Dockers have won! <P ALIGN=RIGHT><font size=-1><a href="sport/30July-02.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><IMG SRC="sport/29July/laver.gif" ALIGN=RIGHT WIDTH="195" HEIGHT="116" BORDER="0" HSPACE="3" VSPACE="3"><B><font size=+2><a href="sport/29July-01.html">Rod Laver recovering</a></font></B><p>Australian tennis legend Rod Laver is stabilising after being in a criticalcondition following a stroke in Los Angels.<P ALIGN=RIGHT><font size=-1><a href="sport/29July-01.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="sport/28July-01.html">The Austrian F1 Grand Prix: things that go bump in the day</a></font></B><br><FONT SIZE="-1">by Mike Wells (July 28)</FONT><p>What happens at the start of a grand prix when 22 impatient cars converge onthe first corner with only room for one at a time? Answer: cars go crunchinto each other and off in various directions.<P ALIGN=RIGHT><font size=-1><a href="sport/28July-01.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="sport/28July-02.html">Spongy brakes and dodgy stories at post-race press conference</a></font></B><br><FONT SIZE="-1">(July 28)</FONT><p>The GP post-race press conference: 1. Mika Hakkinen (McLaren-Mercedes), 1hr30m 44.086s (202.777 km/h); 2. David Coulthard (McLaren-Mercedes), 5.3seconds behind; 3. Michael Schumacher (Ferrari), 39.1 seconds behind  <P ALIGN=RIGHT><font size=-1><a href="sport/28July-02.html">would you like to know more?</a></font><br clear=all><p><hr noshade><p><B><font size=+2><a href="sport/27July-01.html">Home and away</a></font></B><br><FONT SIZE="-1">by Phil Owens (July 27)</FONT><p>The current National Rugby League competition is coming down to the wire. <p>This is normal fare for August as a prelude to the September finals.  Butthe objective in 1998 is not the 1998 flag and premiership.  It's the namesof the clubs and the composition of their teams for 1999 and beyond that isthe end-of-regular-season outcome this year.<P ALIGN=RIGHT><font size=-1><a href="sport/27July-01.html">would you like to know more?</a></font><br clear=all><p><hr noshade><A HREF="http://www.electric.on.net">http://www.electric.on.net</A><p>&copy; This work is subject to copyright. The designers, publishers and internet service providers involved in this project take no responsibility for the content of this site. <br>Webmaster: <A HREF="mailto:webmaster@electric.on.net">webmaster@electric.on.net</A><p><CENTER><FORM ACTION="http://www.cobweb.com.au/cgi-bin/ads/clickthru.pl" METHOD="POST"><input type=hidden name="recipient" value="chris@cobweb.com.au"><input type=hidden name="env_report" value="REMOTE_HOST,HTTP_USER_AGENT,REMOTE_ADDR"><input type=hidden name="sort" value="order:subject,env_report"><input type=hidden name="redirect" value="http://www.va.com.au"><input type=hidden name="subject" value="somebody clicked on the VA ad..."><INPUT TYPE="image" src="http://www.electric.on.net/ads/va_vcecodedark.gif" width=390 height=60 alt=Virtual Artists border=1></form></CENTER><p><hr noshade><p><center><A HREF="http://www.cobweb.com.au"><IMG SRC="sponsors_logos/cobweb_white.gif" ALT="Cobweb Internet Services" WIDTH="83" HEIGHT="40" BORDER="0"></A>&nbsp;&nbsp;&nbsp;<A HREF="http://www.va.com.au"><IMG SRC="sponsors_logos/valogo.gif" ALT="Virtual Artists" WIDTH="50" HEIGHT="40" BORDER="0"></A>&nbsp;&nbsp;&nbsp;<A HREF="http://www.on.net"><IMG SRC="sponsors_logos/internodelogo.jpg" ALT="Internode" WIDTH="110" HEIGHT="40" BORDER="0"></A></center></td></TR></TABLE></BODY></HTML>
