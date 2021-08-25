@@ -61,4 +61,4 @@ files_df['Stem'] = files_df.apply(lambda row: PurePath(row['Path']).stem, axis=1
 # list the non index files with HTM suffix
 stories_df = files_df[(files_df['Stem'] != 'INDEX') & (files_df['Is_File'] == True) & (files_df['Suffix'] == '.HTM')]
 
-stories_df
+stories_df.to_csv(path_or_buf="../data/stories.csv", index=False)
